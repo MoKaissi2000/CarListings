@@ -24,6 +24,8 @@ Routing: react-router-dom
 Storage: LocalStorage (for cart and added cars)
 Styling: Vanilla CSS
 
+
+
 ## Folder Structure
 
 ![image](https://github.com/user-attachments/assets/bf206072-14cc-4093-b10c-7e5c9405fc52)
