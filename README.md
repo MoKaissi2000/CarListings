@@ -42,3 +42,9 @@ Styling: Vanilla CSS
   npm install
 ### Start theDevelopment Server
   npm start
+
+
+
+
+  # Additional Details
+   At the start, the user is prompted role selection, upon choosing Admin, the user will be taken to the Admin Panel page, where the user can view, add or delete existing listings on the page. There will be a "Reset to Default Cars" button that will restore all the original 9 cars in the mocklistings array in the App.js file. This is in case the user deleted the cars and would like to instantly restore them to fll up the site. Cars are stored in localStroage upon being registered to the site. When refreshing the page and chosing user, the user will be presented with the main listings page where the user can search for cars, or use the filters tab in the side. Grid and flexbox were used to organize the listings and the top part of the page to accommodate for scrolling and window resizing. Upon pressing the View Details button, the user will be taken to the page of the specific car with more details. This is where the user can apply for trade-in, add the car to the cart, or return to the original listings page.
