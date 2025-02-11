@@ -17,14 +17,14 @@ A React-based web application for browsing, managing, and purchasing cars. Users
 ✔ Persistent Data – Added cars are stored in localStorage for persistence
 ✔ Reset Listings – Admins can reset cars to the default mock data
 
-###  Tech Stack
+#  Tech Stack
 Frontend: React.js
 State Management: React Hooks (useState, useEffect)
 Routing: react-router-dom
 Storage: LocalStorage (for cart and added cars)
 Styling: Vanilla CSS
 
-### Folder Structure
+## Folder Structure
 
 📦 CarListingsApp
  ┣ 📂 public
@@ -45,13 +45,13 @@ Styling: Vanilla CSS
  ┃ ┗ 📜 package.json       # Project dependencies
 
 
-### Getting Started
+## Getting Started
 
-# Clone the Repository
+### Clone the Repository
   git clone https://github.com/MoKaissi2000/CarListings.git
   cd CarListings
 
-# Install Dependencies
+### Install Dependencies
   npm install
-# Start theDevelopment Server
+### Start theDevelopment Server
   npm start
