@@ -26,10 +26,10 @@ function CarList({ cars, onSelectCar, removeCar, isAdmin }) {
       style={{
         display: 'grid',
         gridTemplateColumns: `repeat(${columns}, minmax(250px, 1fr))`,
-        gap: '50px', // ✅ Restored spacing
+        gap: '50px', 
         padding: '20px',
         alignItems: 'start',
-        justifyContent: 'center', // ✅ Ensures proper centering
+        justifyContent: 'center', 
       }}
     >
       {cars.length > 0 ? (
@@ -48,13 +48,14 @@ function CarList({ cars, onSelectCar, removeCar, isAdmin }) {
               flexDirection: 'column',
               justifyContent: 'space-between',
               alignItems: 'center',
-              margin: 'auto', // ✅ Ensures items are centered with proper spacing
+              margin: 'auto', 
+              border:'solid'
             }}
           >
             <img
               src={car.image}
               alt={car.model}
-              style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '10px', marginBottom: '10px' }}
+              style={{ width: '100%', height: '150px', objectFit: 'cover', borderRadius: '10px', marginBottom: '10px' }}
             />
             <h3>{car.make} {car.model}</h3>
             <p>{car.year}</p>
