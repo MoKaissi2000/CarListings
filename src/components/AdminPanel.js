@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 
 function AdminPanel({ carListings, addCar, removeCar }) {
-  const [newCar, setNewCar] = useState({ make: '', model: '', year: '', price: '', condition: '', image: null });
+  const [newCar, setNewCar] = useState({ 
+    make: '', model: '', year: '', price: '', condition: '', image: null, 
+    color: '', mileage: '', driveType: '', engineType: '', transmission: ''
+  });
 
   const handleChange = (e) => {
     setNewCar({ ...newCar, [e.target.name]: e.target.value });
@@ -26,7 +29,7 @@ function AdminPanel({ carListings, addCar, removeCar }) {
       return;
     }
     addCar(newCar);
-    setNewCar({ make: '', model: '', year: '', price: '', condition: '', image: null });
+    setNewCar({ make: '', model: '', year: '', price: '', condition: '', image: null, color: '', mileage: '', driveType: '', engineType: '', transmission: '' });
   };
 
   return (
@@ -42,7 +45,11 @@ function AdminPanel({ carListings, addCar, removeCar }) {
           <option value="New">New</option>
           <option value="Used">Used</option>
         </select>
-
+        <input type="text" name="color" placeholder="Color" onChange={handleChange} required />
+        <input type="number" name="mileage" placeholder="Mileage" onChange={handleChange} required />
+        <input type="text" name="driveType" placeholder="Drive Type" onChange={handleChange} required />
+        <input type="text" name="engineType" placeholder="Engine Type" onChange={handleChange} required />
+        <input type="text" name="transmission" placeholder="Transmission" onChange={handleChange} required />
         {/* ✅ Image Upload */}
         <input type="file" accept="image/*" onChange={handleImageUpload} required />
         {newCar.image && <img src={newCar.image} alt="Preview" style={{ width: '100px', marginTop: '10px' }} />}
@@ -50,6 +57,23 @@ function AdminPanel({ carListings, addCar, removeCar }) {
         <button type="submit" style={{ padding: '10px', backgroundColor: '#444', color: '#fff', cursor: 'pointer' }}>
           Add Car
         </button>
+        <button
+    onClick={() => {
+        localStorage.removeItem('carListings'); // Clear saved cars
+        window.location.reload(); // Reload page to reset state
+    }}
+    style={{
+        padding: '10px',
+        marginTop: '20px',
+        backgroundColor: 'red',
+        color: '#fff',
+        border: 'none',
+        borderRadius: '5px',
+        cursor: 'pointer'
+    }}
+>
+    Reset to Default Cars
+</button>
       </form>
 
       <h3>Current Listings</h3>
