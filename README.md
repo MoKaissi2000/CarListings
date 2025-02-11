@@ -26,23 +26,8 @@ Styling: Vanilla CSS
 
 ## Folder Structure
 
-📦 CarListingsApp
- ┣ 📂 public
- ┃ ┣ 📜 index.html
- ┃ ┗ 📜 favicon.ico
- ┣ 📂 src
- ┃ ┣ 📂 components
- ┃ ┃ ┣ 📜 AdminPanel.js     # Admin interface for adding/removing cars
- ┃ ┃ ┣ 📜 CarDetails.js     # Displays full car information
- ┃ ┃ ┣ 📜 CarList.js        # Displays car listings
- ┃ ┃ ┣ 📜 Cart.js           # Shopping cart functionality
- ┃ ┃ ┣ 📜 TradeInForm.js    # Trade-in form for users
- ┃ ┃ ┗ 📜 Auth.js           # Handles user authentication (role-based access)
- ┃ ┣ 📂 pics               # Images of cars and logos
- ┃ ┣ 📜 App.js             # Main application logic
- ┃ ┣ 📜 index.js           # Entry point of the app
- ┃ ┣ 📜 App.css            # Main styling file
- ┃ ┗ 📜 package.json       # Project dependencies
+![image](https://github.com/user-attachments/assets/bf206072-14cc-4093-b10c-7e5c9405fc52)
+
 
 
 ## Getting Started
