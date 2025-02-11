@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CarDetails({ car, onBack, onTradeIn }) {
+function CarDetails({ car, onBack, onTradeIn, addToCart }) {
   return (
     <div
       style={{
@@ -24,13 +24,36 @@ function CarDetails({ car, onBack, onTradeIn }) {
           borderRadius: '10px',
         }}
       />
+      
+      {/* Car Details */}
+      <div style={{
+        marginTop: '20px',
+        padding: '15px',
+        backgroundColor: '#333',
+        borderRadius: '10px',
+        color: '#fff',
+        textAlign: 'left'
+      }}>
+        <p><strong>Make:</strong> {car.make}</p>
+        <p><strong>Model:</strong> {car.model}</p>
+        <p><strong>Year:</strong> {car.year}</p>
+        <p><strong>Price:</strong> ${car.price.toLocaleString()}</p>
+        <p><strong>Condition:</strong> {car.condition}</p>
+          {/* Extra Car Details */}
+        <p><strong>Color:</strong> {car.color}</p>
+        <p><strong>Mileage:</strong> {car.mileage.toLocaleString()} miles</p>
+        <p><strong>Drive Type:</strong> {car.driveType}</p>
+        <p><strong>Engine Type:</strong> {car.engineType}</p>
+        <p><strong>Transmission:</strong> {car.transmission}</p>
+      </div>
+
+      {/* Buttons */}
       <div style={{ marginTop: '20px' }}>
         <button
           onClick={onTradeIn}
           style={{
             cursor: 'pointer',
-            marginLeft: '20px',
-            marginRight: '20px',
+            margin: '10px',
             padding: '10px',
             backgroundColor: '#444',
             color: '#fff',
@@ -48,6 +71,29 @@ function CarDetails({ car, onBack, onTradeIn }) {
           }}
         >
           Apply for Trade-in
+        </button>
+        <button
+          onClick={() => addToCart(car)}
+          style={{
+            cursor: 'pointer',
+            margin: '10px',
+            padding: '10px',
+            backgroundColor: 'green',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '5px',
+            transition: 'background-color 0.15s, color 0.15s',
+          }}
+          onMouseOver={(e) => {
+            e.target.style.backgroundColor = 'white';
+            e.target.style.color = 'black';
+          }}
+          onMouseOut={(e) => {
+            e.target.style.backgroundColor = 'green';
+            e.target.style.color = '#fff';
+          }}
+        >
+          Add to Cart
         </button>
         <button
           onClick={onBack}
