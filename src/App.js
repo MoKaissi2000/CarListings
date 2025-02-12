@@ -262,7 +262,7 @@ const removeFromCart = (carId) => {
                                         <p>Price: ${car.price}</p>
                                         <button
                                             onClick={() => removeFromCart(car.id)}
-                                            style={{ padding: '5px', backgroundColor: 'red', color: '#fff', border: 'none', borderRadius: '5px' }}
+                                            style={{ padding: '5px', backgroundColor: 'red', color: '#fff', border: 'none', borderRadius: '5px', cursor:'pointer' }}
                                         >
                                             Remove
                                         </button>
