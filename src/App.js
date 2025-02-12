@@ -168,7 +168,14 @@ const removeFromCart = (carId) => {
           onChange={(e) => setSearchTerm(e.target.value)}
           style={{ flex: '1', padding: '10px', borderRadius: '5px', border: '1px solid #555', backgroundColor: '#333', color: '#fff', maxWidth: '1000px', width: '100%', minWidth: '50px', marginLeft: '900px' }}
         />
-         <img src={cartlogo} alt="Cart" style={{ height: '40px', cursor: 'pointer', marginLeft:'10px' }} onClick={() => setShowCart(!showCart)} />
+         <img src={cartlogo} alt="Cart" style={{ borderRadius:'20px', height: '40px', cursor: 'pointer', marginLeft:'10px' }}onMouseOver={(e) => {
+                e.target.style.backgroundColor = 'white';
+                e.target.style.color = 'black';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.backgroundColor = '#444';
+                e.target.style.color = '#fff';
+              }} onClick={() => setShowCart(!showCart)} />
       </header>
 
       <div style={{ display: 'flex', height:'100vh'}}>
