@@ -159,7 +159,7 @@ const removeFromCart = (carId) => {
   return (
     <div className="app" style={{ backgroundColor: '#2c2c2c', color: '#fff', minHeight: '100vh' }}>
       {/* Top Bar */}
-      <header className="top-bar" style={{ display: 'flex', padding: '10px 20px', alignItems: 'center', backgroundColor: '#1c1c1c', borderBottom: '1px solid #444' }}>
+      <header className="top-bar" style={{ display: 'flex', padding: '10px 20px', alignItems: 'center', backgroundColor: '#1c1c1c', borderBottom: '1px solid #444', width:'100%', zIndex:'1000' }}>
         <img src={logo} alt="Logo" style={{ height: '40px', marginRight: '10px' }} />
         <input
           type="text"
