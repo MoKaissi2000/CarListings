@@ -272,7 +272,16 @@ const removeFromCart = (carId) => {
                         )}
                         <button
                             onClick={() => setShowCart(false)}
-                            style={{ padding: '10px', marginTop: '20px', backgroundColor: '#444', color: '#fff', border: 'none', borderRadius: '5px' }}
+                            style={{ padding: '10px', marginTop: '20px', backgroundColor: '#444', color: '#fff', border: 'none', borderRadius: '5px', cursor:'pointer' }}
+                            onMouseOver={(e) => {
+                              e.target.style.backgroundColor = 'white';
+                              e.target.style.color = 'black';
+                            }}
+                            onMouseOut={(e) => {
+                              e.target.style.backgroundColor = '#444';
+                              e.target.style.color = '#fff';
+                            }}
+                             
                         >
                             Close Cart
                         </button>
