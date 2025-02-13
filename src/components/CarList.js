@@ -30,7 +30,8 @@ function CarList({ cars, onSelectCar, removeCar, isAdmin }) {
         padding: '20px',
         alignItems: 'start',
         justifyContent: 'center', 
-        marginTop:'25px'
+        marginTop:'22px',
+        marginLeft:'252px'
       }}
     >
       {cars.length > 0 ? (
