@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CarList from './components/CarList';
@@ -23,94 +24,39 @@ import car9 from './pics/car9.PNG';
 /*Static sample cars to fill up the page, but more can be added/removed using the admin page. Added cars are stored in LocalStorage */
 const mockListings = [
   { 
-    id: 1, make: 'Toyota', model: 'Corolla', year: 2020, price: 20000, condition: 'New', image: car1, 
+    id: 1, make: 'Toyota', model: 'Corolla', year: 2020, price: 20000, condition: 'New', images:[ car1], 
     color: 'White', mileage: 5000, driveType: 'FWD', engineType: '1.8L I4', transmission: 'Automatic' 
   },
   { 
-    id: 2, make: 'Honda', model: 'Civic', year: 2019, price: 18000, condition: 'Used', image: car2, 
+    id: 2, make: 'Honda', model: 'Civic', year: 2019, price: 18000, condition: 'Used', images: [car2], 
     color: 'Blue', mileage: 12000, driveType: 'FWD', engineType: '2.0L I4', transmission: 'CVT' 
   },
   { 
-    id: 3, make: 'Ford', model: 'Focus', year: 2018, price: 15000, condition: 'Used', image: car3, 
+    id: 3, make: 'Ford', model: 'Focus', year: 2018, price: 15000, condition: 'Used', images: [car3], 
     color: 'Red', mileage: 30000, driveType: 'AWD', engineType: '2.3L I4', transmission: 'Manual' 
   },
   { 
-    id: 4, make: 'Toyota', model: 'Camry', year: 2016, price: 10000, condition: 'Used', image: car4, 
+    id: 4, make: 'Toyota', model: 'Camry', year: 2016, price: 10000, condition: 'Used', images: [car4], 
     color: 'Black', mileage: 45000, driveType: 'FWD', engineType: '2.5L I4', transmission: 'Automatic' 
   },
   { 
-    id: 5, make: 'Toyota', model: 'Corolla', year: 2015, price: 19500, condition: 'Used', image: car5, 
+    id: 5, make: 'Toyota', model: 'Corolla', year: 2015, price: 19500, condition: 'Used', images:[car5], 
     color: 'Gray', mileage: 25000, driveType: 'FWD', engineType: '1.8L I4', transmission: 'CVT' 
   },
   { 
-    id: 6, make: 'Toyota', model: 'Corolla', year: 2010, price: 7000, condition: 'Used', image: car6, 
+    id: 6, make: 'Toyota', model: 'Corolla', year: 2010, price: 7000, condition: 'Used', images: [car6], 
     color: 'Silver', mileage: 80000, driveType: 'FWD', engineType: '1.8L I4', transmission: 'Automatic' 
   },
   { 
-    id: 7, make: 'Mitsubishi', model: 'Outlander', year: 2008, price: 2000, condition: 'Used', image: car7, 
+    id: 7, make: 'Mitsubishi', model: 'Outlander', year: 2008, price: 2000, condition: 'Used', images: [car7], 
     color: 'Green', mileage: 110000, driveType: 'AWD', engineType: '3.0L V6', transmission: 'Automatic' 
   },
   { 
-    id: 8, make: 'Hyundai', model: 'Elantra', year: 2015, price: 17950, condition: 'Used', image: car8, 
+    id: 8, make: 'Hyundai', model: 'Elantra', year: 2015, price: 17950, condition: 'Used', images: [car8], 
     color: 'Gold', mileage: 65000, driveType: 'FWD', engineType: '2.0L I4', transmission: 'Automatic' 
   },
   { 
-    id: 9, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
-    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
-    
-  },
-  { 
-    id: 10, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
-    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
-    
-  },
-  { 
-    id: 11, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
-    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
-    
-  },
-  { 
-    id: 12, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
-    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
-    
-  },
-  { 
-    id: 13, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
-    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
-    
-  },
-  { 
-    id: 14, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
-    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
-    
-  },
-  { 
-    id: 15, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
-    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
-    
-  },
-  { 
-    id: 16, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
-    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
-    
-  },
-  { 
-    id: 17, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
-    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
-    
-  },
-  { 
-    id: 18, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
-    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
-    
-  },
-  { 
-    id: 19, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
-    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
-    
-  },
-  { 
-    id: 20, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
+    id: 9, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', images: [car9], 
     color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
     
   }
