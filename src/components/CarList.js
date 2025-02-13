@@ -55,7 +55,7 @@ function CarList({ cars, onSelectCar, removeCar, isAdmin }) {
             }}
           >
             <img
-              src={car.image}
+              src={car.images[0]}
               alt={car.model}
               style={{ width: '100%', height: '150px', objectFit: 'cover', borderRadius: '10px', marginBottom: '10px' }}
             />
