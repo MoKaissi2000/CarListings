@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function AdminPanel({ carListings, addCar, removeCar }) {
   const [newCar, setNewCar] = useState({ 
-    make: '', model: '', year: '', price: '', condition: '', image: null, 
+    make: '', model: '', year: '', price: '', condition: '', image: [], 
     color: '', mileage: '', driveType: '', engineType: '', transmission: ''
   });
 
@@ -12,15 +12,21 @@ function AdminPanel({ carListings, addCar, removeCar }) {
 
   // Convert uploaded image to Base64
   const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onloadend = () => {
-        setNewCar({ ...newCar, image: reader.result });
-      };
-    }
+    const files = Array.from(e.target.files);
+    const readers = files.map(file => {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+      });
+    });
+  
+    Promise.all(readers).then(images => {
+      setNewCar({ ...newCar, images });
+    });
   };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +35,7 @@ function AdminPanel({ carListings, addCar, removeCar }) {
       return;
     }
     addCar(newCar);
-    setNewCar({ make: '', model: '', year: '', price: '', condition: '', image: null, color: '', mileage: '', driveType: '', engineType: '', transmission: '' });
+    setNewCar({ make: '', model: '', year: '', price: '', condition: '', images: [], color: '', mileage: '', driveType: '', engineType: '', transmission: '' });
   };
 
   return (
@@ -51,7 +57,7 @@ function AdminPanel({ carListings, addCar, removeCar }) {
         <input style={{marginBottom:'10px'}} type="text" name="engineType" placeholder="Engine Type" onChange={handleChange} required />
         <input style={{marginBottom:'10px'}} type="text" name="transmission" placeholder="Transmission" onChange={handleChange} required />
         {/* Image Upload */}
-        <input type="file" accept="image/*" onChange={handleImageUpload} required />
+        <input type="file" accept="image/*" multiple onChange={handleImageUpload} required />
         {newCar.image && <img src={newCar.image} alt="Preview" style={{ width: '100px', marginTop: '10px' }} />}
 
         <button type="submit" style={{ padding: '10px', backgroundColor: '#444', color: '#fff', cursor: 'pointer' }}>
