@@ -26,7 +26,7 @@ function Cart() {
             ) : (
                 <ul style={{ listStyle: 'none', padding: 0 }}>
                     {cart.map(car => (
-                        <li key={car.id} style={{ marginBottom: '20px', borderBottom: '1px solid #ddd', paddingBottom: '10px' }}>
+                        <li key={car.id} style={{ marginBottom: '20px', borderBottom: '1px solid #ddd', paddingBottom: '10px'}}>
                             <h3>{car.make} {car.model} ({car.year})</h3>
                             <img src={car.image} alt={car.model} style={{ maxWidth: '300px', borderRadius: '10px' }} />
                             <p>Price: ${car.price}</p>
