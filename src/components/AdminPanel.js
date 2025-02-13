@@ -10,7 +10,7 @@ function AdminPanel({ carListings, addCar, removeCar }) {
     setNewCar({ ...newCar, [e.target.name]: e.target.value });
   };
 
-  // ✅ Convert uploaded image to Base64
+  // Convert uploaded image to Base64
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -33,24 +33,24 @@ function AdminPanel({ carListings, addCar, removeCar }) {
   };
 
   return (
-    <div>
-      <h2>Admin Panel - Manage Listings</h2>
+    <div style={{paddingLeft:'850px', paddingTop:'20px',maxWidth:'1000px'}} >
+      <h2 style={{marginLeft:'300px'}} >Admin Panel - Manage Listings</h2>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-        <input type="text" name="make" placeholder="Make" value={newCar.make} onChange={handleChange} required />
-        <input type="text" name="model" placeholder="Model" value={newCar.model} onChange={handleChange} required />
-        <input type="number" name="year" placeholder="Year" value={newCar.year} onChange={handleChange} required />
-        <input type="number" name="price" placeholder="Price" value={newCar.price} onChange={handleChange} required />
-        <select name="condition" value={newCar.condition} onChange={handleChange} required>
+        <input style={{marginBottom:'10px'}} type="text" name="make" placeholder="Make" value={newCar.make} onChange={handleChange} required />
+        <input style={{marginBottom:'10px'}} type="text" name="model" placeholder="Model" value={newCar.model} onChange={handleChange} required />
+        <input style={{marginBottom:'10px'}} type="number" name="year" placeholder="Year" value={newCar.year} onChange={handleChange} required />
+        <input style={{marginBottom:'10px'}} type="number" name="price" placeholder="Price" value={newCar.price} onChange={handleChange} required />
+        <select style={{marginBottom:'10px'}} name="condition" value={newCar.condition} onChange={handleChange} required>
           <option value="">Select Condition</option>
           <option value="New">New</option>
           <option value="Used">Used</option>
         </select>
-        <input type="text" name="color" placeholder="Color" onChange={handleChange} required />
-        <input type="number" name="mileage" placeholder="Mileage" onChange={handleChange} required />
-        <input type="text" name="driveType" placeholder="Drive Type" onChange={handleChange} required />
-        <input type="text" name="engineType" placeholder="Engine Type" onChange={handleChange} required />
-        <input type="text" name="transmission" placeholder="Transmission" onChange={handleChange} required />
-        {/* ✅ Image Upload */}
+        <input style={{marginBottom:'10px'}} type="text" name="color" placeholder="Color" onChange={handleChange} required />
+        <input style={{marginBottom:'10px'}} type="number" name="mileage" placeholder="Mileage" onChange={handleChange} required />
+        <input style={{marginBottom:'10px'}} type="text" name="driveType" placeholder="Drive Type" onChange={handleChange} required />
+        <input style={{marginBottom:'10px'}} type="text" name="engineType" placeholder="Engine Type" onChange={handleChange} required />
+        <input style={{marginBottom:'10px'}} type="text" name="transmission" placeholder="Transmission" onChange={handleChange} required />
+        {/* Image Upload */}
         <input type="file" accept="image/*" onChange={handleImageUpload} required />
         {newCar.image && <img src={newCar.image} alt="Preview" style={{ width: '100px', marginTop: '10px' }} />}
 
