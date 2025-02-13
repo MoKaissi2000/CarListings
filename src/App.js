@@ -160,7 +160,7 @@ const removeFromCart = (carId) => {
     <div className="app" style={{ backgroundColor: '#2c2c2c', color: '#fff', minHeight: '100vh' }}>
       {/* Top Bar */}
       <header className="top-bar" style={{ display: 'flex', padding: '10px 20px', alignItems: 'center', backgroundColor: '#1c1c1c', borderBottom: '1px solid #444',position:'fixed', width:'100%', zIndex:'1000' }}>
-        <img src={logo} alt="Logo" style={{ height: '40px', marginRight: '10px' }} />
+        <img src={logo} alt="Logo" onClick={() => setRole(null)}style={{ height: '40px', marginRight: '10px', cursor: 'pointer' }} />
         <input
           type="text"
           placeholder="Search cars..."
@@ -249,7 +249,7 @@ const removeFromCart = (carId) => {
  {showCart && (
                     <aside style={{
                         position: 'fixed', right: 0, top: 0, width: '300px', height: '100%',
-                        backgroundColor: '#1c1c1c', padding: '20px', boxShadow: '-2px 0px 10px rgba(0,0,0,0.2)'
+                        backgroundColor: '#1c1c1c', padding: '20px', boxShadow: '-2px 0px 10px rgba(0,0,0,0.2)', marginTop:'25px'
                     }}>
                         <h2>Your Cart</h2>
                         {cart.length === 0 ? (
