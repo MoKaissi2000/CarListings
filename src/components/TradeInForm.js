@@ -18,7 +18,7 @@ function TradeInForm({ onSubmit, onCancel }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form style={{marginLeft:'300px'}} onSubmit={handleSubmit}>
       <h3>Trade-in Your Car</h3>
       <input type="text" name="make" placeholder="Make" onChange={handleChange} required />
       <input type="text" name="model" placeholder="Model" onChange={handleChange} required />
