@@ -57,6 +57,62 @@ const mockListings = [
   { 
     id: 9, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
     color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
+    
+  },
+  { 
+    id: 10, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
+    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
+    
+  },
+  { 
+    id: 11, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
+    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
+    
+  },
+  { 
+    id: 12, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
+    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
+    
+  },
+  { 
+    id: 13, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
+    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
+    
+  },
+  { 
+    id: 14, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
+    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
+    
+  },
+  { 
+    id: 15, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
+    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
+    
+  },
+  { 
+    id: 16, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
+    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
+    
+  },
+  { 
+    id: 17, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
+    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
+    
+  },
+  { 
+    id: 18, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
+    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
+    
+  },
+  { 
+    id: 19, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
+    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
+    
+  },
+  { 
+    id: 20, make: 'Hyundai', model: 'Tucson', year: 2020, price: 21000, condition: 'Used', image: car9, 
+    color: 'Dark Blue', mileage: 15000, driveType: 'AWD', engineType: '2.4L I4', transmission: 'Automatic' 
+    
   }
 ];
 
@@ -157,7 +213,7 @@ const removeFromCart = (carId) => {
   }
 
   return (
-    <div className="app" style={{ backgroundColor: '#2c2c2c', color: '#fff', minHeight: '100vh' }}>
+    <div className="app" style={{ backgroundColor: '#2c2c2c', color: '#fff', minHeight: '100vh', height:'100%' }}>
       {/* Top Bar */}
       <header className="top-bar" style={{ display: 'flex', padding: '10px 20px', alignItems: 'center', backgroundColor: '#1c1c1c', borderBottom: '1px solid #444',position:'fixed', width:'100%', zIndex:'1000' }}>
         <img src={logo} alt="Logo" onClick={() => setRole(null)}style={{ height: '40px', marginRight: '10px', cursor: 'pointer' }} />
@@ -166,7 +222,7 @@ const removeFromCart = (carId) => {
           placeholder="Search cars..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          style={{ flex: '1', padding: '10px', borderRadius: '5px', border: '1px solid #555', backgroundColor: '#333', color: '#fff', maxWidth: '1000px', width: '100%', minWidth: '50px', marginLeft: '900px' }}
+          style={{ flex: '1', padding: '10px',paddingRight:'100px', borderRadius: '5px', border: '1px solid #555', backgroundColor: '#333', color: '#fff', maxWidth: '1000px', minWidth: '1000px',marginLeft:'650px' }}
         />
          <img src={cartlogo} alt="Cart" style={{ borderRadius:'20px', height: '40px', cursor: 'pointer', marginLeft:'10px' }}onMouseOver={(e) => {
                 e.target.style.backgroundColor = 'white';
@@ -178,9 +234,9 @@ const removeFromCart = (carId) => {
               }} onClick={() => setShowCart(!showCart)} />
       </header>
 
-      <div style={{ display: 'flex', height:'100vh'}}>
+      <div style={{ display: 'flex', height:'100vh' }}>
         {/* Sidebar */}
-        <aside style={{ width: '250px', padding: '20px', backgroundColor: '#1c1c1c', borderRight: '1px solid #444', marginTop:'25px' }}>
+        <aside style={{ width: '250px', padding: '20px', backgroundColor: '#1c1c1c', borderRight: '1px solid #444', marginTop:'25px',height:'100vh',overflowY:'auto',position:'fixed' }}>
           <h2>Filters</h2>
           <label>Car Make:</label>
           <select
