@@ -8,22 +8,27 @@ function CarDetails({ car, onBack, onTradeIn, addToCart }) {
         padding: '20px',
         maxWidth: '600px',
         margin: '0 auto',
+        overflowX:'auto'
       }}
     >
       <h2>{car.make} {car.model} ({car.year})</h2>
-      <img
-        src={car.image}
-        alt={`${car.make} ${car.model}`}
-        style={{
-          maxWidth: '600px',
-          maxHeight: '400px',
-          width: 'auto',
-          height: 'auto',
-          display: 'block',
-          margin: '0 auto',
-          borderRadius: '10px',
-        }}
-      />
+      <div style={{ display: 'flex', 
+        justifyContent: 'flex-start', 
+        alignItems: 'center', 
+        gap: '10px', 
+        flexWrap: 'nowrap',  /* Ensures images stay in a single row */
+        overflowX: 'auto',  /* Enables horizontal scrolling */
+        whiteSpace: 'nowrap', /* Prevents wrapping */
+        padding: '10px' }}>
+  {car.images.map((img, index) => (
+    <img 
+      key={index} 
+      src={img} 
+      alt={`${car.make} ${car.model} - Image ${index + 1}`} 
+      style={{ maxWidth: '100%', height: '200px',objectFit:'cover', marginBottom: '10px', borderRadius: '10px' }}
+    />
+  ))}
+</div>
       
       {/* Car Details */}
       <div style={{
