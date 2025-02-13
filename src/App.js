@@ -180,7 +180,7 @@ const removeFromCart = (carId) => {
 
       <div style={{ display: 'flex', height:'100vh'}}>
         {/* Sidebar */}
-        <aside style={{ width: '250px', padding: '20px', backgroundColor: '#1c1c1c', borderRight: '1px solid #444' }}>
+        <aside style={{ width: '250px', padding: '20px', backgroundColor: '#1c1c1c', borderRight: '1px solid #444', marginTop:'25px' }}>
           <h2>Filters</h2>
           <label>Car Make:</label>
           <select
